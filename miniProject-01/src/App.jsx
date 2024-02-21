@@ -1,9 +1,10 @@
-import NewApp from './NewApp';
+import './App.css';
 
-const App = () =>{
-  return (    
-      <NewApp />    
-  );
+function App() {
+
+  return (
+    <h2>Hello Tests!</h2>
+  )
 }
 
-export default App;
+export default App
