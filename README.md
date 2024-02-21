@@ -18,7 +18,7 @@ This repository contains my code and notes as I work through the React Testing L
 
 ## Course Progress
 
-- [Lesson 1: Overview of Testing](miniProject-01/README.md)
+- [Lesson 1: Overview of Testing](miniProject-01/)
 - ...
 
 Each lesson is organized into its own directory, and you can find additional details and code samples inside.
