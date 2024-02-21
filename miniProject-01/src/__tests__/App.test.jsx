@@ -1,11 +1,10 @@
-import { it, describe } from 'vitest';
+import { test } from 'vitest';
 import { render } from '@testing-library/react';
 import App from '../App';
 
-describe('<App/> component', () => {
 
-  it('renders', () => {
-    render(<App />);
-  });
-
+test('renders the App', () => {
+  render(<App />);
 });
+
+
