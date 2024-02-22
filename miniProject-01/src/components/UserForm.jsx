@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PropTypes } from 'prop-types';
 
 const UserForm = ({onUserAdd}) => {
+//  console.log(onUserAdd())
   const[user, setUser] = useState({
     name: '',
     email: '',
@@ -26,21 +27,14 @@ const UserForm = ({onUserAdd}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    onUserAdd(user);
-    handleEmptyInput();
+    if(user.name && user.email) {
+      console.log('Submitting form with user:', user);
+      
+      onUserAdd(user);
+      handleEmptyInput();
+    }
   }
   
-  // key Enter press
-  const handleEnter = (e) => {
-    const name = user.name;
-    const email = user.email;
-    
-    if(name && email && e.key === 'Enter') {
-      onUserAdd(user);   
-      handleEmptyInput();   
-    }    
-  }
-
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -50,7 +44,6 @@ const UserForm = ({onUserAdd}) => {
           name="name"
           value={user.name}
           onChange={handleNewUser}
-          onKeyDown={handleEnter}
           />
       </div>
       <div>
@@ -59,8 +52,7 @@ const UserForm = ({onUserAdd}) => {
           type="email" 
           name="email"
           value={user.email}
-          onChange={handleNewUser}          
-          onKeyDown={handleEnter}
+          onChange={handleNewUser}  
         />
       </div>
 
@@ -70,7 +62,7 @@ const UserForm = ({onUserAdd}) => {
 }
 
 UserForm.propTypes = {
-  onUserAdd: PropTypes.func,
+  onUserAdd: PropTypes.func.isRequired,
 }
 
 export default UserForm;
