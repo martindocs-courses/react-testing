@@ -18,11 +18,13 @@ const UserList = ({userList}) => {
       {userList.length > 0 && 
         <table style={tableStyling}>
           <thead>
-            <tr>
+            <tr> 
               <th style={cellStyling}>Name</th>
               <th style={cellStyling}>Email</th>
             </tr>
           </thead>
+          <tbody>
+
           {
             userList.map((user, index) =>{
               const{name, email} = user;
@@ -34,6 +36,7 @@ const UserList = ({userList}) => {
               )
             })
           }
+          </tbody>
         </table> 
       }
 
